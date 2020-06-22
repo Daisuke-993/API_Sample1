@@ -28,7 +28,7 @@ class Controller extends BaseController
             'temp' => $weather['main']['temp'],
             'wind' => $weather['wind']['speed']
         ));
-        dd($weather_json);
+        return $weather_json;
         
     }
 
@@ -43,7 +43,7 @@ class Controller extends BaseController
             'temp' => $weather['main']['temp'],
             'wind' => $weather['wind']['speed']
         ));
-        dd($weather_json);
+        return $weather_json;
         
     }
 }
