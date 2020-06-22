@@ -17,12 +17,33 @@ class Controller extends BaseController
         return view('form');
     }
 
+    public function weather($location)
+    {
+        $base = "https://api.openweathermap.org/data/2.5/weather";
+        $api_key = "e753db02de38e5d06f1fdb54a251f5d1";
+        $url = $base . "?q=$location&units=metric&appid=" . $api_key;
+        $weather = json_decode(file_get_contents($url), true);
+        $weather_json = json_encode(array(
+            'weather' => $weather['weather'][0]['main'],
+            'temp' => $weather['main']['temp'],
+            'wind' => $weather['wind']['speed']
+        ));
+        dd($weather_json);
+        
+    }
+
     public function request(Request $request)
     {
         $base = "https://api.openweathermap.org/data/2.5/weather";
         $api_key = "e753db02de38e5d06f1fdb54a251f5d1";
-        $url = $base . "?q=$request->location&appid=" . $api_key;
-        dd(json_decode(file_get_contents($url), true));
+        $url = $base . "?q=$request->location&units=metric&appid=" . $api_key;
+        $weather = json_decode(file_get_contents($url), true);
+        $weather_json = json_encode(array(
+            'weather' => $weather['weather'][0]['main'],
+            'temp' => $weather['main']['temp'],
+            'wind' => $weather['wind']['speed']
+        ));
+        dd($weather_json);
         
     }
 }
