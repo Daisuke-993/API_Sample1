@@ -13,7 +13,10 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-
+    public function form()
+    {
+        return view('form');
+    }
     public function weather(Request $request)
     {
         

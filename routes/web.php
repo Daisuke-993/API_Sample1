@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/sample', 'Controller@index')->name('index');
+Route::get('/sample', 'Controller@form')->name('form');
 Route::post('/sample/weather','Controller@weather')->name('weather');
 
