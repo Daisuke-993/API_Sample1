@@ -23,6 +23,7 @@
                     <th>Weather</th>
                     <th>Temperature</th>
                     <th>Wind Speed</th>
+                    <th>Date</th>
                 </tr>
             </thead>
             <tbody>

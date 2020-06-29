@@ -19,9 +19,13 @@ function ajax(){
             temperature.innerHTML = json['temp'];
             var windSpeed = row.insertCell(3);
             windSpeed.innerHTML = json['wind'];
-
-            
-
+            var now = new Date();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var hour = now.getHours();
+            var min = now.getMinutes();
+            var date = row.insertCell(4);
+            date.innerHTML = month + "/" + day + "  " + hour + ":" + min;
             form.city.value = null;
         
         }
