@@ -16,6 +16,18 @@
             <input type="text" class="city" name="city" placeholder="location">
             <input type="submit">
         </form>
+        <table border=1 id="weather">
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Weather</th>
+                    <th>Temperature</th>
+                    <th>Wind Speed</th>
+                </tr>
+            </thead>
+            <tbody>
 
+            </tbody>
+        </table>
     </body>
 </html>
