@@ -7,27 +7,15 @@
 
         <title>Weather</title>
 
-        <script>
-            ajax(){
-                var req = new XMLHttpRequest();
-                var form = document.querySelector('.form');
-                req.open = (form.method, form.action, true);
-                req.responseType = 'json';
-                req.send(new FormData(form));
-                
-            }
-        </script>
+        <script src="{{ asset('js/script.js') }}"></script>
     </head>
     <body>
-        <div class="col-3">
-            <h1 class="mt-4">Where?</h1>
-            <form class="form" action="{{ route('weather') }}" method="POST" onsubmit="ajax(); return false;">
-                <div class="form-group">
-                    @csrf
-                    <input type="text" name="city" placeholder="location">
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <h1>Where?</h1>
+        <form id="form" action="{{ route('weather') }}" method="POST" onsubmit="ajax(); return false;">
+            @csrf
+            <input type="text" class="city" name="city" placeholder="location">
+            <input type="submit">
+        </form>
+
     </body>
 </html>
